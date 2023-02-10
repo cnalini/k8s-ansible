@@ -6,12 +6,12 @@
 
   tasks:
     - name: DOWNLOADING THE AWS CLI ZIP FILE
-    get_url: 
+     get_url: 
      url: https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
      dest: /home/centos/
 
     - name: INSTALLING UNZIP
-    yum:
+      yum:
       name: unzip
       state: latest
     - name: UNZIPPING THE AWS CLI
@@ -21,7 +21,7 @@
         remote: ./aws/install --update
  
     - name: DOWNLOADING THE KOPS BINARY
-     get_url: 
+      get_url: 
         url: https://github.com/kubernetes/kops/releases/download/latest/kops-linux-amd
         dest: /usr/local/bin/kops
 
