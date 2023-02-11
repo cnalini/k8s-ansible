@@ -1,6 +1,6 @@
 ---
  - name: CREATING THE K8S WORKSTATION
-   hosts: all
+   hosts: k8s-ws
    become: yes
    gather_facts: false
 
@@ -22,15 +22,15 @@
  
    - name: DOWNLOADING THE KOPS BINARY
       get_url: 
-        url: https://github.com/kubernetes/kops/releases/download/latest/kops-linux-amd
-        dest: /usr/local/bin/kops
+         url: https://github.com/kubernetes/kops/releases/download/v1.20.0/kops-linux-amd
+         dest: /usr/local/bin/kops
 
    - name: MAKES KOPS BINARY EXECUTABLE
      command: chmod +x /usr/local/bin/kops
 
    - name: DOWNLOADING THE KUBECTL BINARY
-     get_url:
-         url: https://dl.k8s.io/release/latest/bin/linux/amd64/kubectl
+      get_url:
+         url: https://dl.k8s.io/release/v1.20.0/bin/linux/amd64/kubectl
          dest: /usr/local/bin/kubectl
 
    - name: MAKES KUBECTL BINARY EXECUTABLE
