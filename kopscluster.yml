@@ -14,15 +14,19 @@
      yum:
       name: unzip
       state: latest
+      
    - name: UNZIPPING THE AWS CLI
      unarchive:
         src: /home/centos/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
         dest: /home/centos/
-        remote: ./aws/install --update
+        remote_src: yes
+
+   - name: Installing AWS CLI
+     command: ./aws/install --update
  
    - name: DOWNLOAD THE KOPS BINARY
-      get_url: 
-       url: https://github.com/kubernetes/kops/releases/download/v1.20.0/kops-linux-amd64
+     get_url: 
+      url: https://github.com/kubernetes/kops/releases/download/v1.20.0/kops-linux-amd64
        dest: /usr/local/bin/kops
 
    - name: MAKES KOPS BINARY EXECUTABLE
