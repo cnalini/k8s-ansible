@@ -22,7 +22,7 @@
  
    - name: DOWNLOAD THE KOPS BINARY
       get_url: 
-         url: https://github.com/kubernetes/kops/releases/download/v1.20.0/kops-linux-amd
+         url: https://github.com/kubernetes/kops/releases/download/v1.20.0/kops-linux-amd64
          dest: /usr/local/bin/kops
 
    - name: MAKES KOPS BINARY EXECUTABLE
