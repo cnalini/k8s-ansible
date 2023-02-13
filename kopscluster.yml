@@ -22,16 +22,16 @@
  
    - name: DOWNLOAD THE KOPS BINARY
       get_url: 
-         url: https://github.com/kubernetes/kops/releases/download/v1.20.0/kops-linux-amd64
-         dest: /usr/local/bin/kops
+       url: https://github.com/kubernetes/kops/releases/download/v1.20.0/kops-linux-amd64
+       dest: /usr/local/bin/kops
 
    - name: MAKES KOPS BINARY EXECUTABLE
      command: chmod +x /usr/local/bin/kops
 
    - name: DOWNLOAD THE KUBECTL BINARY
       get_url:
-         url: https://dl.k8s.io/release/v1.20.0/bin/linux/amd64/kubectl
-         dest: /usr/local/bin/kubectl
+       url: https://dl.k8s.io/release/v1.20.0/bin/linux/amd64/kubectl
+       dest: /usr/local/bin/kubectl
 
    - name: MAKES KUBECTL BINARY EXECUTABLE
      command: chmod +x /usr/local/bin/kubectl
