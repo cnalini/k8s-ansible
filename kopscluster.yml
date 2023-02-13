@@ -21,7 +21,7 @@
         dest: /home/centos/
         remote: yes
 
-    - name: Installing AWS CLI
+   - name: Installing AWS CLI
       command: ./aws/install --update
  
    - name: Downloading KOPS
